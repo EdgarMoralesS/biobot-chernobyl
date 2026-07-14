@@ -4,7 +4,7 @@
 
 > A robot with not a single semiconductor, based on living plant-tissue actuators, capable of operating in radiation zones where no conventional electronic robot survives.
 
-This repo is a public, dated record of the concept — released openly (CC0, see [LICENSE](LICENSE)) so that anyone can pick it up, build on it, or prove it wrong. If someone runs with this before we do, that's a win.
+This repo is a public, dated record of the concept — released openly (MIT, see [LICENSE](LICENSE)) so that anyone can pick it up, build on it, or prove it wrong. If someone runs with this before we do, that's a win.
 
 ## Thesis
 
@@ -33,7 +33,7 @@ The single most valuable near-term contribution would be access to a controlled 
 
 ## License
 
-[CC0 1.0](LICENSE) — public domain. No permission needed, no attribution required. Take it and run.
+[MIT](LICENSE) — do whatever you want with it, just keep the copyright notice.
 
 ---
 
