@@ -23,14 +23,33 @@ Key finding: **ionizing radiation does not destroy plant electrical signaling. T
 - **Acute irradiation, wheat — the strongest result we have** (Grinberg et al., *International Journal of Radiation Biology*, March 2026): Dry seeds were irradiated with 3 MeV accelerated electrons at 25, 50, 75, 100, 200 and 400 Gy. **Electrical signal parameters differed significantly from control at the lowest dose tested — 25 Gy — while morphometric and physiological parameters only crossed threshold at 50–75 Gy.** The conclusion is that electrical signaling is the *most radiosensitive parameter in the plant*, more so than growth or photosynthesis.
 - **Cross-talk between systems**: The influence of ionizing radiation on physiological processes occurs mainly through **dysregulation of activity**, due to cross-talk between signaling systems: ROS, calcium, hormonal, and electrical.
 
-## An honest distinction: sensitivity is not amplification
+## Two honest gaps in the evidence chain
 
-These two results point the same way but are not the same claim, and it's worth keeping them apart before someone else does it for us:
+The results above point our way. But between "radiation amplifies plant electrical signalling" and "therefore plants make good actuators in a reactor" there are two soft links, and we would rather name them than have a reviewer find them.
 
-- The chronic study shows **amplification** — bigger VP amplitude under sustained low dose rate, with a named molecular mechanism.
-- The 2026 acute study shows **sensitivity** — the electrical channel is the first thing to move as dose climbs. A parameter that responds early is not automatically a parameter that responds *usefully*: an early, strong response to radiation could just as well be read as the signal being the most easily *perturbed* part of the plant.
+### Gap 1: sensitivity is not amplification
 
-Both are good news for the thesis of this repo — a signaling system that radiation makes louder, and that is measurably the plant's most radiation-responsive channel, is exactly the substrate you would want to build a radiation-zone actuator on. But "radiation amplifies plant signaling, therefore plants make good robots in reactors" is a chain with a soft link in the middle, and we should say so rather than let a reviewer find it.
+- The chronic study shows **amplification** — bigger VP amplitude under sustained low dose rate, with a named molecular mechanism (SKOR).
+- The 2026 acute study shows **sensitivity** — the electrical channel is the first thing to move as dose climbs. A parameter that responds early is not automatically a parameter that responds *usefully*. An early, strong response to radiation could just as well be read as the signal being the most easily **perturbed** part of the plant.
+
+### Gap 2: the amplified signal may not be the one an actuator needs
+
+This one is sharper, and we have not seen it discussed anywhere.
+
+Plants have (at least) two distinct long-distance electrical signals, with different triggers and different mechanisms:
+
+| Signal | Triggered by | Role |
+|---|---|---|
+| **Action potential (AP)** | Non-damaging stimuli — touch, cooling | The fast, all-or-nothing signal. **In *Mimosa pudica* this is what collapses the pulvinus and moves the leaf.** |
+| **Variation potential (VP)** | Damaging stimuli — wounding, heat | A slower, graded wound signal |
+
+**Every radiation result cited above — the SKOR mechanism, the amplitude increase, the 25 Gy response — is about variation potentials.**
+
+But the signal a robot would use to *issue a command* is the action potential. It is the AP that fires when you touch a Mimosa and the leaf folds. **Nobody has checked whether radiation's effect on VPs transfers to APs at all**, and there is no a priori reason it must: they run on different channels.
+
+So the honest state of the evidence is: **radiation is known to amplify a plant signal. It is not known to amplify the plant signal we would actually build on.** That is a real hole, it sits directly under the thesis, and closing it is cheap — see [research angle 5.1](05-research-angles.md#51-pure-biorobotics--experimental-characterization).
+
+Related: as far as we can find, **no one has ever irradiated a fast-moving plant — *Mimosa pudica* or *Dionaea muscipula* — and measured its electrical signals at all.** The electrophysiology of both is well studied, and plant radiobiology is well studied, but the two literatures have not been crossed. Every radiation result we have comes from wheat, tobacco or *Arabidopsis* — none of which move.
 
 ## Implication for control
 

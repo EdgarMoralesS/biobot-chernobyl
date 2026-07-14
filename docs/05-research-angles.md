@@ -4,9 +4,21 @@
 
 ## 5.1 Pure biorobotics — Experimental characterization
 
-Test Venus flytrap actuators under increasing radiation and document at what dose they lose functionality versus an equivalent servomotor. **No one has done this direct comparative experiment**, as far as we've found — see [related work](06-related-work.md) for the closest existing efforts.
+**Do this one first. It is cheap, it fits in under an hour of irradiator time, and it is a kill-test: if it fails, everything else in this repo is dead and you found out for the price of a houseplant.**
 
-**Cheap proof of concept:** Mimosa pudica + electrodes + Arduino outside the zone + long cable + cobalt-60 source in a university lab. Documenting the biological actuator's response to different doses = original, unpublished data.
+Searched July 2026: **no one has ever irradiated a fast-moving plant — *Mimosa pudica* or *Dionaea muscipula* — and measured its electrical signals.** The electrophysiology of both is thoroughly documented (Volkov and others); plant radiobiology is thoroughly documented (Grinberg, Vodeneev and others); **the two literatures have never been crossed.** Every radiation result available comes from wheat, tobacco or *Arabidopsis* — none of which move. (Absence of prior art can't be proven by search; this is "we looked and didn't find it.")
+
+That leaves the experiment original along three axes at once:
+
+1. **New organism** — a plant that is actually an actuator, not just a signal source.
+2. **New measurement** — *coherence*, not amplitude. See [5.3](#53-signaling--signalnoise-modeling-under-radiation).
+3. **New comparison** — head-to-head against a servomotor in the same field, same session. Nobody has published a dose-vs-functionality curve for a biological actuator against an electromechanical one.
+
+**The experiment must measure two signals, not one.** In *Mimosa*, touch produces an **action potential** and damage produces a **variation potential** — different mechanisms. Every radiation result in the literature is about VPs; the signal an actuator needs is the AP. Measure only APs and a null result is uninterpretable; measure only VPs and you get a pretty result that is useless for robotics. See [the gap in §2](02-plants-under-radiation.md#gap-2-the-amplified-signal-may-not-be-the-one-an-actuator-needs).
+
+**Cheap proof of concept:** *Mimosa pudica* + surface Ag/AgCl electrodes + a solenoid for repeatable mechanical stimulus + a camera for mechanical ground truth + amplifier and DAQ **outside the shielding** + a long cable + a research cobalt-60 irradiator. Dose sweep 25–400 Gy, following Grinberg et al. (2026) so the numbers are directly comparable.
+
+Note that the rig **is** the architecture: living tissue inside the radiation zone, every semiconductor outside it, a cable in between. The proof of concept and the machine are the same object.
 
 ## 5.2 Materials — Radiotrophic fungi as shield and energy source
 
